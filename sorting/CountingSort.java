@@ -1,5 +1,6 @@
 package sorting;
 
+import java.lang.System;
 import java.util.Arrays;
 
 public class CountingSort {
@@ -30,12 +31,12 @@ public class CountingSort {
         int max;
     }
 
-    static int[] sort(int[] arr) {
+    static void sort(int[] arr) {
         int size = arr.length;
 
         // If the array size is less than or equal to 1, then the array is already sorted.
         if (size <= 1) {
-            return arr;
+            return;
         }
 
         Aggregation aggregation = getAggregation(arr); // O(n)
@@ -52,7 +53,7 @@ public class CountingSort {
             output[correctPosition] = value;
         }
 
-        return output;
+        System.arraycopy(output, 0, arr, 0, size);
     }
 
     private static Aggregation getAggregation(int[] arr) {
@@ -96,7 +97,7 @@ public class CountingSort {
 
     public static void main(String[] args) {
         int[] arr = new int[] { 10, 4, 2, 12, 6, 9, 11, 20, 1 };
-        arr = CountingSort.sort(arr);
+        CountingSort.sort(arr);
         System.out.print(Arrays.toString(arr));
     }
 }
