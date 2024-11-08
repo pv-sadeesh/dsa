@@ -3,10 +3,10 @@ package sorting;
 import java.util.Arrays;
 
 public class BubbleSort {
-    
-    // Best Case    : Time Complexity: O(n)    Space Complexity: O(1)
-    // Average Case : Time Complexity: O(n^2)  Space Complexity: O(1)
-    // Worst Case   : Time Complexity: O(n^2)  Space Complexity: O(1)
+
+    // Best Case    : Time Complexity: O(n)     Space Complexity: O(1)
+    // Average Case : Time Complexity: O(n^2)   Space Complexity: O(1)
+    // Worst Case   : Time Complexity: O(n^2)   Space Complexity: O(1)
 
     // 1. Check Array Size: If the array has 0 or 1 element, it's already sorted; return.
     // 2. Outer Loop: Loop from i = 0 to size - 2.
@@ -21,27 +21,27 @@ public class BubbleSort {
 
         // If the array size is less than or equal to 1,
         // then the array is already sorted.
-        if(size <= 1) {
+        if (size <= 1) {
             return;
         }
 
-        // Since the last iteration sorts the first two items, 
+        // Since the last iteration sorts the first two items,
         // we only need to iterate up to size - 1.
-        for(int i = 0; i < size - 1; i++) {
+        for (int i = 0; i < size - 1; i++) {
             boolean swapped = false;
 
             // With each iteration, items on the right side are sorted one by one.
             // Therefore, we can limit the inner loop to j < size - 1 - i.
-            for(int j = 0; j < size - 1 - i; j++) {
-                if(arr[j] > arr[j + 1]) {
+            for (int j = 0; j < size - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
                     swap(arr, j, j + 1);
                     swapped = true;
                 }
             }
 
-            // If no items were swapped in this iteration, 
+            // If no items were swapped in this iteration,
             // the array is already sorted, so we can return early.
-            if(!swapped) {
+            if (!swapped) {
                 return;
             }
         }
@@ -54,7 +54,7 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[]{10,4,2,12,6,9,11,20,1};
+        int[] arr = new int[] { 10, 4, 2, 12, 6, 9, 11, 20, 1 };
         BubbleSort.sort(arr);
         System.out.print(Arrays.toString(arr));
     }
