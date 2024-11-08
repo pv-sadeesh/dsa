@@ -4,17 +4,24 @@ import java.util.Arrays;
 
 public class BubbleSort {
 
-    // Best Case    : Time Complexity: O(n)     Space Complexity: O(1)
-    // Average Case : Time Complexity: O(n^2)   Space Complexity: O(1)
-    // Worst Case   : Time Complexity: O(n^2)   Space Complexity: O(1)
-
-    // 1. Check Array Size: If the array has 0 or 1 element, it's already sorted; return.
-    // 2. Outer Loop: Loop from i = 0 to size - 1.
-    //      Initialize swapped = false.
-    // 3. Inner Loop: For each element j from 0 to size - 1 - i:
-    //      Compare arr[j] and arr[j + 1]. If arr[j] > arr[j + 1], swap and set swapped = true.
-    // 4. Early Exit: If no swaps occurred in a pass (swapped = false), the array is sorted; return.
-    // 5. Repeat Until Sorted: Continue passes until the array is fully sorted.
+    /*********************************************************************************************************************************
+     * Best Case    : Time Complexity: O(n)     Space Complexity: O(1)
+     * Average Case : Time Complexity: O(n^2)   Space Complexity: O(1)
+     * Worst Case   : Time Complexity: O(n^2)   Space Complexity: O(1)
+     *********************************************************************************************************************************
+     * 1. Check Array Size: 
+     *      If the array has 0 or 1 element, it's already sorted; return.
+     * 2. Outer Loop: 
+     *      Loop from i = 0 to size - 1.
+     *      Initialize swapped = false.
+     * 3. Inner Loop: 
+     *      For each element j from 0 to size - 1 - i:
+     *      Compare arr[j] and arr[j + 1]. If arr[j] > arr[j + 1], swap and set swapped = true.
+     * 4. Early Exit: 
+     *      If no swaps occurred in a pass (swapped = false), the array is sorted; return.
+     * 5. Repeat Until Sorted: 
+     *      Continue passes until the array is fully sorted.
+     *********************************************************************************************************************************/
 
     static void sort(int[] arr) {
         int size = arr.length;
