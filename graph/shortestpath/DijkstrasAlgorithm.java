@@ -92,7 +92,7 @@ public class DijkstrasAlgorithm {
         return output;
     }
 
-    public int[] getPathTo(int destination, ShortestPathInfo[] data) {
+    public int[] getPath(int destination, ShortestPathInfo[] data) {
         if (destination >= data.length) {
             throw new IllegalArgumentException("Destination index out of bounds.");
         }
@@ -135,7 +135,7 @@ public class DijkstrasAlgorithm {
             System.out.println("Node: " + i +
                     ", From: " + info.from +
                     ", Distance: " + info.distance +
-                    ", Path: " + Arrays.toString(graph.getPathTo(i, output)));
+                    ", Path: " + Arrays.toString(graph.getPath(i, output)));
         }
 
         // Node: 0, From: -1, Distance: 0, Path: [0]
